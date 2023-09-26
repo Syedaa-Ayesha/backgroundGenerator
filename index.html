@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="gradient-preview">
+            <input type="color" id="color1" value="#ffffff">
+            <input type="color" id="color2" value="#000000">
+        </div>
+        <button id="btn" onclick="generateGradient()">Generate Gradient</button>
+        <div class="color-value">
+            <p id="color-1" class="colors"></p>
+            <p id="color-2" class="colors"></p>
+        </div>
+        <footer id="footer">
+            <span>© All Rights Are Reserved By Syeda Ayesha</span>
+        </footer>
+    </div>
+   
+    <script>
+        function generateGradient() {
+            let btn = document.getElementById('btn');
+            const color1 = document.getElementById('color1').value;
+            const color2 = document.getElementById('color2').value;
+            const gradientPreview = document.querySelector('.container');
+            gradientPreview.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            let p1 = document.getElementById('color-1');
+            let p2 = document.getElementById('color-2');
+            p1.innerHTML = `<p>color-code: ${color1}</p>`;
+            p2.innerHTML = `<p>color-code: ${color2}</p>`;
+            btn.style.background = color2;
+            let footer = document.getElementById("footer");
+            footer.style.color = "whitesmoke";
+        }
+
+    </script>
+</body>
+
+</html>
